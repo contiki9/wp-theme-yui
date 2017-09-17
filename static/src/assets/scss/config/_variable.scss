@@ -1,7 +1,7 @@
 // --------------------------------------------------
 //Base Color
 // --------------------------------------------------
-$color-bg:#FFF !default;;//背景色
+$color-bg:#f9f9f9 !default;;//背景色
 $color-text: #3F3F3F !default;;//基本文字色
 $color-text-light: #888 !default;;//基本文字色
 $color-link: #03a9f4 !default;;//基本リンク色
@@ -44,7 +44,7 @@ $ease-out-quint:                  cubic-bezier(.23,1,.32,1);
 $container:960px;//Containerサイズ
 $global-radius:4px;
 //breakpointサイズ
-//breakpointが１津の場合は’brk’を使用しています。
+//breakpointが１つの場合は’brk’を使用しています。
 $breakpoints: (
   'brk': 'screen and (max-width: 640px)',
   'sp': 'screen and (max-width: 400px)',
