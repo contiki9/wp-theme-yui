@@ -84,12 +84,12 @@ var browserSyncWatchFiles = [
 // browser-sync options
 // see: https://www.browsersync.io/docs/options/
 var browserSyncOptions = {
-    //proxy: "localhost/wordpress/",
+    proxy: "http://wpthemeyui.dev/",
     notify: false,
-    server: {
-        baseDir: release.root,
-        index: 'index.html'
-    },
+    // server: {
+    //     baseDir: release.root,
+    //     index: 'index.html'
+    // },
     open: false//オプション
 };
 
