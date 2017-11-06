@@ -65,7 +65,6 @@ a {
   text-decoration: none;
   color: $color-link;
   &:hover{
-    color: $color-link;
     text-decoration: none;
     transition: all .5s;
     color:darken($color-link,30%);
@@ -139,7 +138,7 @@ button {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
+  background-color: #FFF;
   border-radius: $global-radius;
   border: 1px solid $color-border;
   cursor: pointer;
@@ -161,7 +160,7 @@ input {
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
-    background-color: transparent;
+    background-color: #FFF;
     border-radius: $global-radius;
     border: 1px solid $color-border;
     cursor: pointer;

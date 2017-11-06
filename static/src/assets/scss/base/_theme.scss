@@ -1,10 +1,6 @@
 //Core
-.widget {
-  .widget-title {
-    @include cnt-font-size(18);
-    color: $color-text-light;
-    margin-bottom: 1em;
-  }
+.widget, .footer-widget {
+
   ul {
     padding-left: .5em;
     li {
@@ -16,35 +12,66 @@
     }
   }
 }
+
+.widget-title {
+  @include cnt-font-size(18);
+  color: $color-text-light;
+  margin-bottom: 1em;
+}
+
+.footer-widget {
+  ul {
+    margin-bottom: 0;
+  }
+}
+
 //
+.entry-header, .entry-footer {
+  padding: 10px 20px;
+}
+
 .post {
-  @include flx-row;
+
   @include cnt-radius(5px);
   background: #FFF;
   margin-top: 20px;
   margin-bottom: 20px;
-
-
+  @include mq(pc) {
+    @include flx-row;
+  }
   .l-left {
-    @include flx-col;
-    max-width: 30%;
-    width: 100px;
-    padding-right: 10px;
+
+    @include mq(pc) {
+      @include flx-row;
+      @include flx-col;
+      max-width: 30%;
+      padding-right: 10px;
+      .post-thumbnail {
+        width: 200px;
+      }
+    }
+    .post-thumbnail {
+      min-height: 150px;
+    }
   }
   .l-right {
-    @include flx-col;
-    padding-top: 15px;
-    padding-bottom: 15px;;
+    @include mq(pc) {
+      @include flx-col;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
   }
-  .entry-header{
-    width:100%;
+  .entry-header {
+    width: 100%;
+    text-align: center;
   }
   .entry-meta {
     @include cnt-font-size(12);
     border-top: 1px solid $color-border;
     margin-top: .5em;
-    padding-top: .5em;
+    padding-top: 1em;
     margin-bottom: 1em;
+    color: $color-text-light;
   }
   .post-thumbnail {
     background-size: cover;
@@ -59,18 +86,23 @@
   }
   .entry-content {
     color: $color-text-light;
-    @include cnt-font-size(14);
-    p {
-      @include cnt-font-size(14);
-    }
+    padding: 20px;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .entry-footer {
     display: none;
     @include cnt-font-size(12);
   }
-  .single &{
-    padding: 20px;
-    .entry-footer{
+  .single & {
+
+    .wp-post-image {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .entry-footer {
       display: block;
     }
   }
@@ -80,9 +112,13 @@
   @include cnt-link(#FFF);
   background: #333;
   border: none;
-  .entry-footer {
-    @include cnt-font-size(12);
-  }
+}
+
+.entry-footer {
+  @include cnt-font-size(12);
+  width: calc(100% + 40px);
+  border-top: 1px solid rgba($color-border, .5);
+  color: $color-text-light;
 }
 
 //npager
@@ -116,6 +152,46 @@
   }
 }
 
-#wrapper-footer{
-  background: $color-;
+#wrapper-footer {
+  background: $color-bg;
+  .site-info {
+    text-align: center;
+    @include cnt-font-size(12);
+  }
+}
+
+#wrapper-static-hero {
+  padding-top: 0;
+  padding-bottom: 0;
+
+}
+
+#content {
+  @include mq(pc) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.navigation {
+  .nav-previous, .nav-next {
+    @include cnt-radius(4px);
+    margin-bottom: 2em;
+    background: $color-link;
+    padding: .5em .8em;
+    a {
+      @include cnt-link(#FFF);
+    }
+  }
+}
+
+//comments
+#comments {
+  @include cnt-radius(4px);
+  padding: 20px;
+  background: #FFF;
+}
+
+.navbar-toggler {
+  margin-bottom: 0;
 }
