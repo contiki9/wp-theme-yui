@@ -3,6 +3,7 @@
 
   ul {
     padding-left: .5em;
+    margin-bottom: 0;
     li {
       @include cnt-font-size(14);
       padding-left: .2em;
@@ -10,6 +11,14 @@
       padding-bottom: .5em;
       margin-bottom: .5em;
     }
+  }
+}
+.widget{
+  padding:10px;
+  background: #FFF;
+  margin-bottom: 40px;
+  @include mq(pc){
+    padding:20px;
   }
 }
 
@@ -25,6 +34,13 @@
   }
 }
 
+.site-main{
+  .post {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
 //
 .entry-header, .entry-footer {
   padding: 10px 20px;
