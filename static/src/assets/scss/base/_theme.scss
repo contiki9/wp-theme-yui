@@ -14,6 +14,7 @@
   }
 }
 .widget{
+  @include cnt-radius(4px);
   padding:10px;
   background: #FFF;
   margin-bottom: 40px;
@@ -210,4 +211,11 @@
 
 .navbar-toggler {
   margin-bottom: 0;
+}
+
+#searchform{
+  margin-bottom: 0;
+  input{
+    margin-bottom: 0;
+  }
 }
