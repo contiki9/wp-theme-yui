@@ -36,7 +36,9 @@ wp-content/themes/**/.DS_Store
 wp-content/themes/**/images/*
 wp-content/themes/**/js/*
 wp-content/themes/**/*.css
-!wp-content/themes/**/style.css
+!wp-content/themes/yui/*
+!wp-content/themes/yui/*/**
+wp-content/themes/yui/.DS_Store
 
 understrap
 twentyfifteen
