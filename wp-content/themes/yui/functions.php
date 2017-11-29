@@ -24,18 +24,16 @@ function theme_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 
-if ( ! function_exists( 'all_excerpts_get_more_link' ) ) {
-    /**
-     * Adds a custom read more link to all excerpts, manually or automatically generated
-     *
-     * @param string $post_excerpt Posts's excerpt.
-     *
-     * @return string
-     */
-    function all_excerpts_get_more_link( $post_excerpt ) {
+if ( ! function_exists( 'yui_all_excerpts_get_more_link' ) ) {
 
-        return $post_excerpt . ' [...]<div class="understrap-read-more-link-block"><a class="btn understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More...',
-            'understrap' ) . '</a></div>';
+    function all_excerpts_get_more_link( $post_excerpt ) {
+        return $post_excerpt;
     }
+
+    function yui_all_excerpts_get_more_link( $post_excerpt ) {
+        return $post_excerpt . ' [...]<div class="understrap-read-more-link-block"><a class="btn understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More...', 'yui' ) . '</a></div>';
+    }
+
 }
-add_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
+add_filter( 'wp_trim_excerpt', 'yui_all_excerpts_get_more_link' );
+
