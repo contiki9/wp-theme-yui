@@ -45,7 +45,7 @@ $thum = get_the_post_thumbnail_url(get_the_ID(), 'medium');
 
             <?php
             wp_link_pages(array(
-                'before' => '<div class="page-links">' . __('Pages:', 'understrap'),
+                'before' => '<div class="page-links">' . __('Pages:', 'yui'),
                 'after' => '</div>',
             ));
             ?>
