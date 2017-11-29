@@ -26,14 +26,10 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
 if ( ! function_exists( 'yui_all_excerpts_get_more_link' ) ) {
 
-    function all_excerpts_get_more_link( $post_excerpt ) {
-        return $post_excerpt;
-    }
-
     function yui_all_excerpts_get_more_link( $post_excerpt ) {
+        remove_filter( 'wp_trim_excerpt', 'all_excerpts_get_more_link' );
         return $post_excerpt . ' [...]<div class="understrap-read-more-link-block"><a class="btn understrap-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More...', 'yui' ) . '</a></div>';
     }
-
+    add_filter( 'wp_trim_excerpt', 'yui_all_excerpts_get_more_link' );
 }
-add_filter( 'wp_trim_excerpt', 'yui_all_excerpts_get_more_link' );
-
+add_action( 'after_setup_theme', 'yui_all_excerpts_get_more_link', 20 );
